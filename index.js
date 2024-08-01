@@ -11,6 +11,7 @@ class LinkedList {
     append(node) {
         if (this.head === null) {
             this.head = node;
+            this.tail = node;
             this.next = node;
             this.length++;
             return;
