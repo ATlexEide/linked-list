@@ -42,9 +42,10 @@ class LinkedList {
         return tmp
     };
     pop() {
-        let secondToLast = this.at(this.length - 2)
-        secondToLast.next = null
-        this.length--
+        let secondToLast = this.at(this.length - 2);
+        secondToLast.next = null;
+        this.tail = secondToLast;
+        this.length--;
     };
     contains(value) {
 
@@ -73,8 +74,8 @@ const emma = new Node('emma', 'ex')
 
 testList.append(alex)
 testList.append(emma)
-testList.prepend(new Node('griff', 'best bro'))
+// testList.prepend(new Node('griff', 'best bro'))
 
 console.log(testList)
-console.log(testList.pop())
+// console.log(testList.pop())
 console.log(testList)
