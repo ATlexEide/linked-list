@@ -93,7 +93,7 @@ class Node {
 
 const testList = new LinkedList()
 const alex = new Node('alex', 'human')
-const emma = new Node('emma', 'ex')
+const emma = new Node('emma', 'example text')
 
 testList.append(alex)
 testList.append(emma)
