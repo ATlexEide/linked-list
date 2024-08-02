@@ -9,6 +9,8 @@ class LinkedList {
         return string;
     }
     append(node) {
+        if (typeof node === 'string')
+            node = new Node(node)
         if (this.head === null) {
             this.head = node;
             this.tail = node;
@@ -49,18 +51,38 @@ class LinkedList {
         this.length--;
     };
     contains(value) {
-
+        let tmp = this.next;
+        while (tmp !== null && tmp.name !== value && tmp.data !== value) {
+            tmp = tmp.next;
+        }
+        if (!tmp)
+            return false
+        if (tmp.name === value || tmp.data === value)
+            return true
     };
     find(value) {
-
+        if (this.contains(value)) {
+            let tmp = this.next;
+            while (tmp !== null && tmp.name !== value && tmp.data !== value) {
+                tmp = tmp.next;
+            }
+            return tmp
+        }
     };
     toString() {
-
+        let string = '';
+        let tmp = this.next;
+        while (tmp !== null) {
+            string += `( ${tmp.name} ) -> `
+            tmp = tmp.next;
+        }
+        string += '(null)'
+        return string
     };
 };
 
 class Node {
-    constructor(name, data) {
+    constructor(name, data = 'no data') {
         this.name = name;
         this.data = data;
         this.next = null;
@@ -75,8 +97,20 @@ const emma = new Node('emma', 'ex')
 
 testList.append(alex)
 testList.append(emma)
-// testList.prepend(new Node('griff', 'best bro'))
+testList.prepend(new Node('griff', 'best bro'))
 
 console.log(testList)
 // console.log(testList.pop())
-console.log(testList)
+console.log(testList.toString())
+
+
+const list = new LinkedList();
+
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
+console.log(list)
+console.log(list.toString())
