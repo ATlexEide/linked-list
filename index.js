@@ -5,9 +5,6 @@ class LinkedList {
     next = null;
     constructor() {
     };
-    test(string) {
-        return string;
-    }
     append(node) {
         if (typeof node === 'string')
             node = new Node(node)
