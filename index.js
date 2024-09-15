@@ -90,10 +90,10 @@ class Node {
 
 const testList = new LinkedList()
 const alex = new Node('alex', 'human')
-const emma = new Node('emma', 'example text')
+const lenni = new Node('lenni', 'example text')
 
 testList.append(alex)
-testList.append(emma)
+testList.append(lenni)
 testList.prepend(new Node('griff', 'best bro'))
 
 console.log(testList)
